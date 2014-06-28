@@ -43,12 +43,12 @@ We start with a pfSense 2.1.2 x32 base .iso and run a few scripts on it before c
    - user 'vagrant' with mitchellh authorized_key
    - ```<enablesshd/>```
 
- - pfSense likes to mess with /etc/passwd and other stuff on reboot so we need to reset our user 'vagrant' user stuff by using <shellcmd> in the imported confit.xml to issue commands at boot
+ - pfSense likes to mess with /etc/passwd and other stuff on reboot so we need to reset our user 'vagrant' user stuff by using `<shellcmd>` in the imported config.xml to issue commands at boot
    - ```<shellcmd>pw usermod vagrant -s /usr/local/bin/bash</shellcmd>```
    - ```<shellcmd>pw group mod wheel -m vagrant</shellcmd>```
    - ```<shellcmd>chown -R vagrant /home/vagrant/.ssh</shellcmd>```
 
  - Frome here our regular scripts take over like a normal Packer install
-   - config.sh writes our /http/confit.xml file to /conf/config.xml
+   - config.sh writes our /http/config.xml file to /conf/config.xml
    - vmtools.sh supposedly enables virtualbox modules but damned if I can get it working
    - vagrant.sh imports keys and stuff
