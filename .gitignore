@@ -1,5 +1,10 @@
-# Cache objects
-packer_cache/
+.Trashes
 
-# For built boxes
+# Packer / Vagrant
 *.box
+*_cache
+.vagrant
+*iso
+
+# Linux
+.directory
